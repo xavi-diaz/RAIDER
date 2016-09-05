@@ -1,0 +1,2642 @@
+<?xml version="1.0" ?>
+<robot name="raider">
+
+
+  <link name="base_link"/>
+
+  <joint name="base_to_hip_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="hip_chassis"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+  <link name="hip_chassis">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/hip/hip_chassis.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/hip/hip_chassis.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00007189 0.01928601 -0.00453033" rpy="0 0 0"/>
+      <mass value="0.016"/>
+        <inertia ixx="5.191171483e-3" ixy="1.889438e-10" ixz="-9.447190001e-11" iyy="4.106153398e-3" iyz="-1.012031363e-3" izz="5.375462069e-3"/>
+    </inertial>
+  </link>
+
+
+  <joint name="hip_fixed_1" type="fixed">
+    <parent link="hip_chassis"/>
+    <child link="servo_hip_middle"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+  <link name="servo_hip_middle">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/hip/servo_hip_middle.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/hip/servo_hip_middle.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00007460 -0.00230645 0.00286107" rpy="0 0 0"/>
+      <mass value="0.055"/>
+        <inertia ixx="1.584150609e-2" ixy="-1.180596567e-6" ixz="2.572464702e-6" iyy="8.731452013e-3" iyz="-1.171831492e-4" izz="1.337262651e-2"/>
+    </inertial>
+  </link>
+
+  <joint name="hip_fixed_2" type="fixed">
+    <parent link="hip_chassis"/>
+    <child link="servo_hip_left"/>
+    <origin xyz="-0.0320068 0.00115157 -0.00602916"/>
+  </joint>
+
+  <link name="servo_hip_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/hip/servo_hip_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/hip/servo_hip_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00006777 0.00115182 0.00697493" rpy="0 0 0"/>
+      <mass value="0.055"/>
+        <inertia ixx="1.583225269e-2" ixy="1.177473268e-6" ixz="-2.57094599e-6" iyy="8.727465805e-3" iyz="-1.142341128e-4" izz="1.336481424e-2"/>
+    </inertial>
+  </link>
+
+  <joint name="hip_fixed_3" type="fixed">
+    <parent link="hip_chassis"/>
+    <child link="servo_hip_right"/>
+    <origin xyz="0.0320068 0.00115157 -0.00602916"/>
+  </joint>
+
+  <link name="servo_hip_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/hip/servo_hip_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/hip/servo_hip_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00008141 0.00115182 0.00677494" rpy="0 0 0"/>
+      <mass value="0.055"/>
+        <inertia ixx="1.583225525e-2" ixy="1.177473381e-6" ixz="-2.571077783e-6" iyy="8.72746664e-3" iyz="-1.142335976e-4" izz="1.336481249e-2"/>
+    </inertial>
+  </link>
+
+  <joint name="hip_fixed_4" type="fixed">
+    <parent link="hip_chassis"/>
+    <child link="battery"/>
+    <origin xyz="0.00115644 -0.0369547 0.00124019"/>
+  </joint>
+
+  <link name="battery">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/hip/battery.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/hip/battery.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00097198 -0.00105228 0.00006117" rpy="0 0 0"/>
+      <mass value="0.158"/>
+        <inertia ixx="2.210945422e-2" ixy="1.03219632e-9" ixz="-1.651514112e-9" iyy="1.286187805e-1" iyz="1.857953376e-9" izz="1.226020914e-1"/>
+    </inertial>
+  </link>
+
+  <joint name="hip_fixed_5" type="fixed">
+    <parent link="hip_chassis"/>
+    <child link="battery_support"/>
+    <origin xyz="-0.00007189165 -0.0295583 0.00130137"/>
+  </joint>
+
+  <link name="battery_support">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/hip/battery_support.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/hip/battery_support.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0 -0.01307583 0.00000001" rpy="0 0 0"/>
+      <mass value="0.01"/>
+        <inertia ixx="3.171190309e-3" ixy="0" ixz="0" iyy="5.377102908e-3" iyz="-2.296440104e-10" izz="3.688142286e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="hip_fixed_6" type="fixed">
+    <parent link="hip_chassis"/>
+    <child link="upper_hip"/>
+    <origin xyz="-0.00009356946 -0.00032945 0.0198145"/>
+  </joint>
+
+  <link name="upper_hip">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/hip/upper_hip.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/hip/upper_hip.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00002080 0.00384223 -0.00003845" rpy="0 0 0"/>
+      <mass value="0.005"/>
+        <inertia ixx="1.474914531e-3" ixy="-6.478540122e-8" ixz="-6.551332707e-9" iyy="1.16523657e-3" iyz="-4.465305182e-7" izz="2.627043236e-3"/>
+    </inertial>
+  </link>
+
+ <joint name="middle_hip_twist" type="revolute">
+   <dynamics damping="0.2" friction="1"/>
+   <limit upper="2.618" lower="-2.618" velocity="5.6" effort="3"/>
+    <parent link="hip_chassis"/>
+    <child link="chest_chassis"/>
+    <origin xyz="0 0.01068 0.0558014"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="chest_chassis">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/chest/chest_chassis.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/chest/chest_chassis.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00039253 -0.00761600 -0.00675532" rpy="0 0 0"/>
+      <mass value="0.069"/>
+        <inertia ixx="6.863324164e-2" ixy="-2.471713992e-4" ixz="-1.00117548e-3" iyy="1.114796619e-1" iyz="-2.77569158e-3" izz="1.060263729e-1"/>
+    </inertial>
+  </link>
+
+  <joint name="chest_fixed_1" type="fixed">
+    <parent link="chest_chassis"/>
+    <child link="ultrasonic"/>
+    <origin xyz="0.0024993 0.0202518 0"/>
+  </joint>
+
+  <link name="ultrasonic">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/chest/ultrasonic.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/chest/ultrasonic.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00000001 0.00322000 -0.00490010" rpy="0 0 0"/>
+      <mass value="0.01"/>
+        <inertia ixx="4.58746267e-4" ixy="2.524237094e-10" ixz="-2.524237094e-10" iyy="2.136264629e-3" iyz="5.320082098e-6" izz="2.087806597e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="chest_fixed_2" type="fixed">
+    <parent link="chest_chassis"/>
+    <child link="microservo"/>
+    <origin xyz="-0.00844686 0.00544451 0.0295265"/>
+  </joint>
+
+  <link name="microservo">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/chest/microservo.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/chest/microservo.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00500716 -0.00237643 -0.00000223" rpy="0 0 0"/>
+      <mass value="0.0134"/>
+        <inertia ixx="7.978188803e-4" ixy="7.127068935e-5" ixz="2.151106913e-10" iyy="7.07316865e-4" iyz="2.151106913e-10" izz="1.204355715e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="chest_fixed_3" type="fixed">
+    <parent link="chest_chassis"/>
+    <child link="acceloremeter"/>
+    <origin xyz="0.0299093 -0.0307509 -0.0285586"/>
+  </joint>
+
+  <link name="acceloremeter">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/chest/acceloremeter.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/chest/acceloremeter.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00070203 0.00049105 -0.00032787" rpy="0 0 0"/>
+      <mass value="0.001"/>
+        <inertia ixx="2.141154936e-5" ixy="-4.553627023e-7" ixz="8.877197106e-8" iyy="5.032695592e-5" iyz="3.360831806e-7" izz="7.141742581e-5"/>
+    </inertial>
+  </link>
+
+  <joint name="chest_fixed_4" type="fixed">
+    <parent link="chest_chassis"/>
+    <child link="compass"/>
+    <origin xyz="-0.0374371 0.00181184 0.0242137"/>
+  </joint>
+
+  <link name="compass">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/chest/compass.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/chest/compass.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00017800 0.00096779 -0.00007871" rpy="0 0 0"/>
+      <mass value="0.2"/>
+        <inertia ixx="1.599272858e-2" ixy="2.28227758e-4" ixz="1.964066562e-5" iyy="9.465396279e-3" iyz="-2.044655459e-5" izz="2.538557182e-2"/>
+    </inertial>
+  </link>
+
+  <joint name="chest_fixed_5" type="fixed">
+    <parent link="chest_chassis"/>
+    <child link="ubec"/>
+    <origin xyz="-0.00489688 -0.037931 -0.00222576"/>
+  </joint>
+
+  <link name="ubec">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/chest/ubec.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/chest/ubec.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00625377 0.00043372 0.00000001" rpy="0 0 0"/>
+      <mass value="0.0075"/>
+        <inertia ixx="4.498644396e-4" ixy="1.390448e-5" ixz="-5.612801138e-10" iyy="2.367006978e-3" iyz="0" izz="2.033599406e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="chest_fixed_6" type="fixed">
+    <parent link="chest_chassis"/>
+    <child link="expansion_board"/>
+    <origin xyz="-0.00514412 -0.0481948 -0.00378719"/>
+  </joint>
+
+  <link name="expansion_board">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/chest/expansion_board.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/chest/expansion_board.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00592726 -0.00027226 0.00114254" rpy="0 0 0"/>
+      <mass value="0.035"/>
+        <inertia ixx="1.315564908e-2" ixy="-1.981932878e-5" ixz="-9.942891968e-5" iyy="3.237308011e-2" iyz="8.850570473e-5" izz="1.945570435e-2"/>
+    </inertial>
+  </link>
+
+  <joint name="chest_fixed_7" type="fixed">
+    <parent link="chest_chassis"/>
+    <child link="beaglebone"/>
+    <origin xyz="-0.00488924 -0.0554585 -0.0100727"/>
+  </joint>
+
+  <link name="beaglebone">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/chest/beaglebone.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/chest/beaglebone.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00172271 -0.00050347 0.00418386" rpy="0 0 0"/>
+      <mass value="0.04"/>
+        <inertia ixx="1.0932949e-2" ixy="-1.111962654e-3" ixz="1.141874183e-4" iyy="3.639460876e-2" iyz="-1.135940571e-5" izz="2.653132519e-2"/>
+    </inertial>
+  </link>
+
+  <joint name="chest_fixed_8" type="fixed">
+    <parent link="chest_chassis"/>
+    <child link="servo_shoulder_left"/>
+    <origin xyz="-0.0396593 -0.00038456 -0.0009822"/>
+  </joint>
+
+  <link name="servo_shoulder_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/chest/servo_shoulder_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/chest/servo_shoulder_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00759888 0.00005217 -0.00229300" rpy="0 0 0"/>
+      <mass value="0.055"/>
+        <inertia ixx="1.337263252e-2" ixy="2.572464517e-6" ixz="1.171802484e-4" iyy="1.584150903e-2" iyz="1.180596482e-6" izz="8.731450466e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="chest_fixed_9" type="fixed">
+    <parent link="chest_chassis"/>
+    <child link="servo_shoulder_right"/>
+    <origin xyz="0.0396593 -0.00038456 -0.0009822"/>
+  </joint>
+
+  <link name="servo_shoulder_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/chest/servo_shoulder_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/chest/servo_shoulder_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00760029 0.00004675 -0.00229298" rpy="0 0 0"/>
+      <mass value="0.055"/>
+        <inertia ixx="1.337262927e-2" ixy="2.572332802e-6" ixz="-1.171845757e-4" iyy="1.584150857e-2" iyz="-1.180727839e-6" izz="8.731451604e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="neck" type="revolute">
+    <dynamics damping="0.2" friction="1"/>
+    <limit effort="3" lower="-1" upper="0" velocity="5.6"/>
+    <parent link="chest_chassis"/>
+    <child link="head"/>
+    <origin xyz="0.00140647 0.00829226 0.0295842"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+
+  <link name="head">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/head/head.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/head/head.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00132723 -0.01429395 0.02426031" rpy="0 0 0"/>
+      <mass value="0.044"/>
+        <inertia ixx="2.34201589e-2" ixy="-1.796759361e-4" ixz="1.364867206e-4" iyy="1.764565497e-2" iyz="8.306261706e-4" izz="2.668410729e-2"/>
+    </inertial>
+  </link>
+
+  <joint name="head_fixed_1" type="fixed">
+    <parent link="head"/>
+    <child link="head_microservo"/>
+    <origin xyz="-0.0242506 -0.00419373 0.00446374"/>
+  </joint>
+
+  <link name="head_microservo">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/head/head_microservo.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/head/head_microservo.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00022423 0.00137882 -0.00135171" rpy="0 0 0"/>
+      <mass value="0.001"/>
+        <inertia ixx="3.442638179e-5" ixy="-2.039015327e-6" ixz="1.998245342e-6" iyy="1.800072251e-5" iyz="1.419363163e-5" izz="1.857201837e-5"/>
+    </inertial>
+  </link>
+
+  <joint name="head_fixed_2" type="fixed">
+    <parent link="head"/>
+    <child link="lifecam_chassis"/>
+    <origin xyz="-0.0020811 0.00843488 0.028907"/>
+  </joint>
+
+  <link name="lifecam_chassis">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/head/lifecam_chassis.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/head/lifecam_chassis.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00072476 -0.00108142 -0.00104770" rpy="0 0 0"/>
+      <mass value="0.003"/>
+        <inertia ixx="1.516544904e-4" ixy="1.776422636e-7" ixz="-1.218205437e-6" iyy="3.847781198e-4" iyz="-2.846948342e-7" izz="2.780122755e-4"/>
+    </inertial>
+  </link>
+
+  <joint name="head_fixed_3" type="fixed">
+    <parent link="head"/>
+    <child link="lifecam"/>
+    <origin xyz="-0.00139828 0.00567554 0.0277925"/>
+  </joint>
+
+  <link name="lifecam">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/head/lifecam.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/head/lifecam.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00000823 -0.00449742 0.00014718" rpy="0 0 0"/>
+      <mass value="0.0953"/>
+        <inertia ixx="6.165946502e-3" ixy="-5.781611019e-9" ixz="0" iyy="3.256564677e-3" iyz="0" izz="6.494934623e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="head_fixed_4" type="fixed">
+    <parent link="head"/>
+    <child link="cover_head"/>
+    <origin xyz="0.00559351 -0.0478272 0.0219127"/>
+  </joint>
+
+  <link name="cover_head">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/head/cover_head.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/head/cover_head.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0 0.00000004 0.00007979" rpy="0 0 0"/>
+      <mass value="0.0003"/>
+        <inertia ixx="1.397005015e-6" ixy="0" ixz="0" iyy="1.174563157e-5" iyz="0" izz="1.054861942e-5"/>
+    </inertial>
+  </link>
+
+  <joint name="left_shoulder_swing" type="revolute">
+    <dynamics damping="0.2" friction="1"/>
+    <limit effort="3" lower="-2.618" upper="2.618" velocity="5.6"/>
+    <parent link="chest_chassis"/>
+    <child link="shoulder_left"/>
+    <origin xyz="-0.0748183 -0.00030104 0.0092405"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+
+  <link name="shoulder_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_left/shoulder_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_left/shoulder_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00225196 0.00000255 0.01027598" rpy="0 0 0"/>
+      <mass value="0.026"/>
+        <inertia ixx="1.171025637e-2" ixy="-3.556832255e-7" ixz="1.402301064e-3" iyy="9.349601755e-3" iyz="1.884457751e-7" izz="1.450529999e-2"/>
+    </inertial>
+  </link>
+
+  <joint name="left_shoulder_lateral" type="revolute">
+    <dynamics damping="0.2" friction="1"/>
+    <limit effort="3" lower="-2.618" upper="2.618" velocity="5.6"/>
+    <parent link="shoulder_left"/>
+    <child link="servo_upper_arm_left"/>
+    <origin rpy="0 0.0910695 0" xyz="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <link name="servo_upper_arm_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_left/servo_upper_arm_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_left/servo_upper_arm_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00055259 -0.00032910 -0.01366849" rpy="0 0 0"/>
+      <mass value="0.055"/>
+        <inertia ixx="1.584149611e-2" ixy="2.572728625e-6" ixz="-1.180334079e-6" iyy="1.337261651e-2" iyz="-1.171835884e-4" izz="8.731454432e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="arm_left_fixed_1" type="fixed">
+    <parent link="servo_upper_arm_left"/>
+    <child link="union1_servo_left"/>
+    <origin xyz="-0.00039575 -0.00160837 -0.0387193"/>
+  </joint>
+
+  <link name="union1_servo_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_left/union1_servo_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_left/union1_servo_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00006751 0.00000753 -0.00100185" rpy="0 0 0"/>
+      <mass value="0.004"/>
+        <inertia ixx="5.903880327e-4" ixy="7.455531758e-8" ixz="1.111552008e-7" iyy="2.511813013e-4" iyz="-1.552722317e-8" izz="8.147108116e-4"/>
+    </inertial>
+  </link>
+
+  <joint name="arm_left_fixed_2" type="fixed">
+    <parent link="servo_upper_arm_left"/>
+    <child link="union2_servo_left"/>
+    <origin xyz="-0.00044713 -0.00123698 -0.045538"/>
+  </joint>
+
+  <link name="union2_servo_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_left/union2_servo_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_left/union2_servo_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00000383 -0.00007045 0.00100659" rpy="0 0 0"/>
+      <mass value="0.004"/>
+        <inertia ixx="2.511376057e-4" ixy="3.848834228e-7" ixz="-9.082212222e-8" iyy="5.89380537e-4" iyz="-1.59555712e-7" izz="8.137517773e-4"/>
+    </inertial>
+  </link>
+
+  <joint name="arm_left_fixed_3" type="fixed">
+    <parent link="servo_upper_arm_left"/>
+    <child link="servo_elbow_left"/>
+    <origin xyz="-0.00911248 -0.00133966 -0.0731075"/>
+  </joint>
+
+  <link name="servo_elbow_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_left/servo_elbow_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_left/servo_elbow_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00760563 0.00005400 0.00227864" rpy="0 0 0"/>
+      <mass value="0.055"/>
+        <inertia ixx="1.337262927e-2" ixy="2.572464271e-6" ixz="-1.171837869e-4" iyy="1.584151054e-2" iyz="-1.180596369e-6" izz="8.731453576e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="left_elbow" type="revolute">
+    <dynamics damping="0.2" friction="1"/>
+    <limit lower="-2.618" upper="2.618" velocity="5.6" effort="3"/>
+    <parent link="servo_upper_arm_left"/>
+    <child link="elbow_left"/>
+    <origin xyz="-0.0032117 -0.0015761 -0.0838842" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+
+  <link name="elbow_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_left/elbow_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_left/elbow_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00194748 0.00442683 -0.01020510" rpy="0 0 0"/>
+      <mass value="0.015"/>
+        <inertia ixx="4.254908986e-3" ixy="2.94433851e-4" ixz="6.981588931e-4" iyy="8.263119224e-3" iyz="-5.4290122831e-4" izz="7.018497689e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="forearm_left_fixed_1" type="fixed">
+    <parent link="elbow_left"/>
+    <child link="forearm_left"/>
+    <origin xyz="-0.0002358 0.00243312 -0.0448661"/>
+  </joint>
+
+  <link name="forearm_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_left/forearm_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_left/forearm_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00000116 0.00051318 0.00714009" rpy="0 0 0"/>
+      <mass value="0.014"/>
+        <inertia ixx="3.431889011e-3" ixy="1.0835187e-7" ixz="-1.6694699e-8" iyy="4.001838287e-3" iyz="2.079620464e-4" izz="4.528085098e-3"/>
+    </inertial>
+  </link>
+
+ <joint name="forearm_left_fixed_2" type="fixed">
+    <parent link="elbow_left"/>
+    <child link="sharp_left"/>
+    <origin xyz="-0.00096005 -0.00624223 -0.0437885"/>
+  </joint>
+
+  <link name="sharp_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_left/sharp_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_left/sharp_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00026204 0.00092561 0.00035277" rpy="0 0 0"/>
+      <mass value="0.0035"/>
+        <inertia ixx="8.286926246e-5" ixy="9.036400778e-6" ixz="6.067968112e-6" iyy="3.385598667e-4" iyz="7.205861856e-6" izz="3.272701097e-4"/>
+    </inertial>
+  </link>
+
+  <joint name="forearm_left_fixed_3" type="fixed">
+    <parent link="elbow_left"/>
+    <child link="hand_left"/>
+    <origin xyz="-0.0003 0.00426269 -0.0852268" rpy="0 0 0"/>
+  </joint>
+
+  <link name="hand_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_left/hand_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_left/hand_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0 0.00000560 0.00021762" rpy="0 0 0"/>
+      <mass value="0.034"/>
+        <inertia ixx="1.390019495e-2" ixy="1.694004452e-10" ixz="5.929015583e-10" iyy="1.310772781e-2" iyz="-1.837152911e-4" izz="5.943910118e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="right_shoulder_swing" type="revolute">
+    <dynamics damping="0.2" friction="1"/>
+    <limit effort="3" lower="-2.618" upper="2.618" velocity="5.6"/>
+    <parent link="chest_chassis"/>
+    <child link="shoulder_right"/>
+    <origin xyz="0.0748183 -0.00030104 0.0092405"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+
+  <link name="shoulder_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_right/shoulder_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_right/shoulder_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00225196 0.00000255 0.01027598" rpy="0 0 0"/>
+      <mass value="0.026"/>
+        <inertia ixx="1.171025637e-2" ixy="3.556832255e-7" ixz="-1.402301064e-3" iyy="9.349601755e-3" iyz="1.884457751e-7" izz="1.450529999e-2"/>
+    </inertial>
+  </link>
+
+  <joint name="right_shoulder_lateral" type="revolute">
+    <dynamics damping="0.2" friction="1"/>
+    <limit effort="3" lower="-2.618" upper="2.618" velocity="5.6"/>
+    <parent link="shoulder_right"/>
+    <child link="servo_upper_arm_right"/>
+    <origin rpy="0 0.0910695 3.14159265359" xyz="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <link name="servo_upper_arm_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_right/servo_upper_arm_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_right/servo_upper_arm_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00055259 0.00032910 -0.01366849" rpy="0 0 0"/>
+      <mass value="0.055"/>
+        <inertia ixx="1.584149611e-2" ixy="2.572728625e-6" ixz="1.180334079e-6" iyy="1.337261651e-2" iyz="1.171835884e-4" izz="8.731454432e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="arm_right_fixed_1" type="fixed">
+    <parent link="servo_upper_arm_right"/>
+    <child link="union1_servo_right"/>
+    <origin xyz="-0.00039575 0.00160837 -0.0387193"/>
+  </joint>
+
+  <link name="union1_servo_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_right/union1_servo_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_right/union1_servo_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00006751 -0.00000753 -0.00100185" rpy="0 0 0"/>
+      <mass value="0.004"/>
+        <inertia ixx="5.903880327e-4" ixy="-7.455531758e-8" ixz="1.111552008e-7" iyy="2.511813013e-4" iyz="-1.552722317e-8" izz="8.147108116e-4"/>
+    </inertial>
+  </link>
+
+  <joint name="arm_right_fixed_2" type="fixed">
+    <parent link="servo_upper_arm_right"/>
+    <child link="union2_servo_right"/>
+    <origin xyz="-0.00044713 0.00123698 -0.045538"/>
+  </joint>
+
+  <link name="union2_servo_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_right/union2_servo_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_right/union2_servo_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00000383 0.00007045 0.00100659" rpy="0 0 0"/>
+      <mass value="0.004"/>
+        <inertia ixx="2.511376057e-4" ixy="-3.848834228e-7" ixz="9.082212222e-8" iyy="5.89380537e-4" iyz="1.59555712e-7" izz="8.137517773e-4"/>
+    </inertial>
+  </link>
+
+  <joint name="arm_right_fixed_3" type="fixed">
+    <parent link="servo_upper_arm_right"/>
+    <child link="servo_elbow_right"/>
+    <origin xyz="-0.00911248 0.00133966 -0.0731075"/>
+  </joint>
+
+  <link name="servo_elbow_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_right/servo_elbow_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_right/servo_elbow_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00760563 -0.00005400 0.00227864" rpy="0 0 0"/>
+      <mass value="0.055"/>
+        <inertia ixx="1.337262927e-2" ixy="-2.572464271e-6" ixz="-1.171837869e-4" iyy="1.584151054e-2" iyz="1.180596369e-6" izz="8.731453576e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="right_elbow" type="revolute">
+    <dynamics damping="0.2" friction="1"/>
+    <limit lower="-2.618" upper="2.618" velocity="5.6" effort="3"/>
+    <parent link="servo_upper_arm_right"/>
+    <child link="elbow_right"/>
+    <origin xyz="-0.0032117 -0.0015761 -0.0838842" rpy="0 0 -3.14159265359"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+
+  <link name="elbow_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_right/elbow_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_right/elbow_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00194748 0.00442683 -0.01020510" rpy="0 0 0"/>
+      <mass value="0.015"/>
+        <inertia ixx="4.254908986e-3" ixy="-2.94433851e-4" ixz="-6.981588931e-4" iyy="8.263119224e-3" iyz="-5.4290122831e-4" izz="7.018497689e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="forearm_right_fixed_1" type="fixed">
+    <parent link="elbow_right"/>
+    <child link="forearm_right"/>
+    <origin xyz="0.0002358 0.00243312 -0.0448661"/>
+  </joint>
+
+  <link name="forearm_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_right/forearm_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_right/forearm_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00000116 0.00051318 0.00714009" rpy="0 0 0"/>
+      <mass value="0.014"/>
+        <inertia ixx="3.431889011e-3" ixy="-1.0835187e-7" ixz="1.6694699e-8" iyy="4.001838287e-3" iyz="2.079620464e-4" izz="4.528085098e-3"/>
+    </inertial>
+  </link>
+
+ <joint name="forearm_right_fixed_2" type="fixed">
+    <parent link="elbow_right"/>
+    <child link="sharp_right"/>
+    <origin xyz="0.00096005 -0.00624223 -0.0437885"/>
+  </joint>
+
+  <link name="sharp_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_right/sharp_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_right/sharp_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00026204 0.00092561 0.00035277" rpy="0 0 0"/>
+      <mass value="0.0035"/>
+        <inertia ixx="8.286926246e-5" ixy="9.036400778e-6" ixz="6.067968112e-6" iyy="3.385598667e-4" iyz="7.205861856e-6" izz="3.272701097e-4"/>
+    </inertial>
+  </link>
+
+  <joint name="forearm_right_fixed_3" type="fixed">
+    <parent link="elbow_right"/>
+    <child link="hand_right"/>
+    <origin xyz="0.0003 0.00426269 -0.0852268" rpy="0 0 0"/>
+  </joint>
+
+  <link name="hand_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_right/hand_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/arm_right/hand_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0 0.00000560 0.00021762" rpy="0 0 0"/>
+      <mass value="0.034"/>
+        <inertia ixx="1.390019495e-2" ixy="-1.694004452e-10" ixz="-5.929015583e-10" iyy="1.310772781e-2" iyz="-1.837152911e-4" izz="5.943910118e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="left_hip_twist" type="revolute">
+    <dynamics damping="0.2" friction="1"/>
+    <limit effort="3" lower="-2.618" upper="2.618" velocity="5.6"/>
+    <parent link="hip_chassis"/>
+    <child link="leg_bracket_left"/>
+    <origin xyz="-0.032 -0.0101551 -0.0186144" rpy="0 0 0" />
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="leg_bracket_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/leg_bracket_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/leg_bracket_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00053091 -0.00172089 -0.00834553" rpy="0 0 0"/>
+      <mass value="0.017"/>
+        <inertia ixx="1.495980413e-2" ixy="-2.368780952e-4" ixz="-8.186163715e-5" iyy="2.822001687e-3" iyz="-3.235943509e-4" izz="1.496789755e-2"/>
+    </inertial>
+  </link>
+
+  <joint name="left_hip_lateral" type="revolute">
+    <dynamics damping="0.2" friction="1"/>
+    <limit effort="3" lower="-2.618" upper="2.618" velocity="5.6"/>
+    <origin xyz="0.0000488 -0.017192 -0.02701342" rpy="0 0 0"/>
+    <parent link="leg_bracket_left"/>
+    <child link="servo_upper_back_left"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <link name="servo_upper_back_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/servo_upper_back_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/servo_upper_back_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00004575 0.00107173 -0.01278793" rpy="0 0 0"/>
+      <mass value="0.055"/>
+        <inertia ixx="1.584252149e-2" ixy="2.504866567e-6" ixz="1.277738286e-6" iyy="1.337412502e-2" iyz="1.169334286e-4" izz="8.733199211e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="servos_upper_leg_left_fixed_1" type="fixed">
+    <parent link="servo_upper_back_left"/>
+    <child link="servo_upper_front_left"/>
+    <origin xyz="-0.00870754 0.0341821 -0.0104941"/>
+  </joint>
+
+  <link name="servo_upper_front_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/servo_upper_front_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/servo_upper_front_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00765171 -0.00005296 -0.00227755" rpy="0 0 0"/>
+      <mass value="0.055"/>
+        <inertia ixx="1.341498569e-2" ixy="1.31666741e-6" ixz="1.361871011e-4" iyy="1.585479641e-2" iyz="-1.087653078e-6" izz="8.730436032e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="servos_upper_leg_left_fixed_2" type="fixed">
+    <parent link="servo_upper_back_left"/>
+    <child link="groin1_left"/>
+    <origin xyz="0.0157543 0.00646487 -0.0166946"/>
+  </joint>
+
+  <link name="groin1_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/groin1_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/groin1_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00003782 -0.00407424 0.00041568" rpy="0 0 0"/>
+      <mass value="0.005"/>
+        <inertia ixx="9.644712035e-4" ixy="-3.252272928e-5" ixz="3.002372493e-6" iyy="3.775491692e-4" iyz="8.879752981e-5" izz="6.129816237e-4"/>
+    </inertial>
+  </link>
+
+  <joint name="servos_upper_leg_left_fixed_3" type="fixed">
+    <parent link="servo_upper_back_left"/>
+    <child link="groin2_left"/>
+    <origin xyz="-0.0158544 0.00605289 -0.0167685"/>
+  </joint>
+
+  <link name="groin2_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/groin2_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/groin2_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00003481 -0.00366226 0.00048959" rpy="0 0 0"/>
+      <mass value="0.005"/>
+        <inertia ixx="9.644710942e-4" ixy="3.252271271e-5" ixz="-3.002370963e-6" iyy="3.775489768e-4" iyz="8.879748456e-5" izz="6.129815661e-4"/>
+    </inertial>
+  </link>
+
+  <joint name="servos_upper_leg_left_fixed_4" type="fixed">
+    <parent link="servo_upper_back_left"/>
+    <child link="tob_left"/>
+    <origin xyz="0.00013905 0.0489806 -0.0161953"/>
+  </joint>
+
+  <link name="tob_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/tob_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/tob_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00018759 0.00176090 0.00124031" rpy="0 0 0"/>
+      <mass value="0.005"/>
+        <inertia ixx="9.981850555e-4" ixy="-9.830437246e-10" ixz="9.830437246e-10" iyy="1.627183494e-3" iyz="-5.15200928e-6" izz="6.697790241e-4"/>
+    </inertial>
+  </link>
+
+  <joint name="left_hip_swing" type="revolute">
+    <dynamics damping="0.2" friction="1"/>
+    <limit effort="3" lower="-2.618" upper="2.618" velocity="5.6"/>
+    <origin xyz="0 0.0342807 -0.00009354" rpy="0 0 0" />
+    <parent link="servo_upper_back_left"/>
+    <child link="upper_leg_left"/>
+  </joint>
+
+  <link name="upper_leg_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/upper_leg_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/upper_leg_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00142973 0.00379246 -0.04215870" rpy="0 0 0"/>
+      <mass value="0.023"/>
+        <inertia ixx="1.628737188e-2" ixy="-3.993939796e-5" ixz="4.831034036e-5" iyy="2.478624097e-2" iyz="1.25620531e-3" izz="1.217019363e-2"/>
+    </inertial>
+  </link>
+
+  <joint name="left_upper_knee" type="revolute">
+    <dynamics damping="0.2" friction="1"/>
+    <origin xyz="0 0 -0.07456994" rpy="0 0 0" />
+    <limit effort="3" lower="-2.618" upper="2.618" velocity="5.6"/>
+    <parent link="upper_leg_left"/>
+    <child link="servo_upper_knee_left"/>
+  </joint>
+
+  <link name="servo_upper_knee_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/servo_upper_knee_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/servo_upper_knee_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00110869 -0.01295022 -0.00032022" rpy="0 0 0"/>
+      <mass value="0.055"/>
+        <inertia ixx="1.337394956e-2" ixy="1.171254422e-4" ixz="2.557390078e-6" iyy="8.733528522e-3" iyz="1.274422863e-6" izz="1.584281516e-2"/>
+    </inertial>
+  </link>
+
+  <joint name="servos_knee_left_fixed_1" type="fixed">
+    <parent link="servo_upper_knee_left"/>
+    <child link="servo_lower_knee_left"/>
+    <origin xyz="-0.00827343 -0.0117965 -0.0323855"/>
+  </joint>
+
+  <link name="servo_lower_knee_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/servo_lower_knee_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/servo_lower_knee_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00696888 -0.00116501 0.00006529" rpy="0 0 0"/>
+      <mass value="0.055"/>
+        <inertia ixx="1.336651034e-2" ixy="1.13982721e-4" ixz="2.513971737e-6" iyy="8.729622707e-3" iyz="1.290261732e-6" izz="1.583352721e-2"/>
+    </inertial>
+  </link>
+
+  <joint name="servos_knee_left_fixed_2" type="fixed">
+    <parent link="servo_upper_knee_left"/>
+    <child link="knee_damper1_left"/>
+    <origin xyz="0.0174309 -0.0261935 -0.0135774"/>
+  </joint>
+
+  <link name="knee_damper1_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/knee_damper1_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/knee_damper1_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00004439 -0.00161589 0.00071641" rpy="0 0 0"/>
+      <mass value="0.002"/>
+        <inertia ixx="4.230267299e-4" ixy="-7.535580568e-6" ixz="2.017356657e-6" iyy="1.369879801e-4" iyz="6.73852952e-5" izz="2.904947255e-4"/>
+    </inertial>
+  </link>
+
+  <joint name="servos_knee_left_fixed_3" type="fixed">
+    <parent link="servo_upper_knee_left"/>
+    <child link="knee_damper2_left"/>
+    <origin xyz="-0.0175285 -0.0261935 -0.0135774"/>
+  </joint>
+
+  <link name="knee_damper2_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/knee_damper2_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/knee_damper2_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00004436 -0.00161589 0.00071641" rpy="0 0 0"/>
+      <mass value="0.002"/>
+        <inertia ixx="4.230266275e-4" ixy="7.535584932e-6" ixz="-2.017357825e-6" iyy="1.369879436e-4" iyz="6.738533422e-5" izz="2.904946621e-4"/>
+    </inertial>
+  </link>
+
+  <joint name="left_lower_knee" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 -0.0323448"/>
+    <parent link="servo_upper_knee_left"/>
+    <child link="lower_leg_left"/>
+  </joint>
+
+  <link name="lower_leg_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/lower_leg_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/lower_leg_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00171667 0.01351945 -0.02736454" rpy="0 0 0"/>
+      <mass value="0.044"/>
+        <inertia ixx="4.0481699e-2" ixy="-7.703372097e-4" ixz="-9.074179128e-4" iyy="4.938368018e-2" iyz="-3.273833556e-3" izz="2.491062885e-2"/>
+    </inertial>
+  </link>
+
+  <joint name="left_ankle_swing" type="revolute">
+    <dynamics damping="0.2" friction="1"/>
+    <limit effort="3" lower="-2.618" upper="2.618" velocity="5.6"/>
+    <origin xyz="0 0 -0.0749237" rpy="0 0 0" />
+    <parent link="lower_leg_left"/>
+    <child link="servo_front_foot_left"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+
+  <link name="servo_front_foot_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/servo_front_foot_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/servo_front_foot_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00110911 -0.00014571 0.01274626" rpy="0 0 0"/>
+      <mass value="0.055"/>
+        <inertia ixx="1.337408923e-2" ixy="2.489191051e-6" ixz="-1.171556382e-4" iyy="1.584272934e-2" iyz="-1.180709443e-6" izz="8.733371233e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="servos_foot_left_fixed_1" type="fixed">
+    <parent link="servo_front_foot_left"/>
+    <child link="servo_back_foot_left"/>
+    <origin xyz="-0.00011615 -0.0336389 0.0101398"/>
+  </joint>
+
+  <link name="servo_back_foot_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/servo_back_foot_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/servo_back_foot_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00006988 -0.00739793 0.00260606" rpy="0 0 0"/>
+      <mass value="0.055"/>
+        <inertia ixx="1.583501504e-2" ixy="-2.315906424e-6" ixz="-1.381288722e-6" iyy="1.337453614e-2" iyz="1.252775501e-4" izz="8.725143537e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="servos_foot_left_fixed_2" type="fixed">
+    <parent link="servo_front_foot_left"/>
+    <child link="front_ankle_left"/>
+    <origin xyz="0.00013859 0.0136403 0.0161539"/>
+  </joint>
+
+  <link name="front_ankle_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/front_ankle_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/front_ankle_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00018758 0.00176084 -0.00124033" rpy="0 0 0"/>
+      <mass value="0.007"/>
+        <inertia ixx="9.981850874e-4" ixy="-9.830454502e-10" ixz="-9.830454502e-10" iyy="1.627184015e-3" iyz="5.152018324e-6" izz="6.697793396e-4"/>
+    </inertial>
+  </link>
+
+  <joint name="servos_foot_left_fixed_3" type="fixed">
+    <parent link="servo_front_foot_left"/>
+    <child link="back_ankle_left"/>
+    <origin xyz="0.00013159 -0.0180916 0.0219803"/>
+  </joint>
+
+  <link name="back_ankle_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/back_ankle_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/back_ankle_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00018072 -0.00304108 0.00143365" rpy="0 0 0"/>
+      <mass value="0.005"/>
+        <inertia ixx="4.098129619e-4" ixy="5.54852896e-9" ixz="-1.38713224e-9" iyy="1.291342991e-3" iyz="1.390447486e-5" izz="1.050780276e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="left_ankle_lateral" type="revolute">
+    <dynamics damping="0.2" friction="1"/>
+    <limit effort="3" lower="-2.618" upper="2.618" velocity="5.6"/>
+    <parent link="servo_front_foot_left"/>
+    <child link="foot_left"/>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <link name="foot_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/foot_left.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_left/foot_left.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00226692 0.00129538 -0.02182894" rpy="0 0 0"/>
+      <mass value="0.031"/>
+        <inertia ixx="2.227441086e-2" ixy="3.824757376e-5" ixz="-2.905960978e-4" iyy="8.36308527e-3" iyz="1.906618833e-4" izz="2.670931294e-2"/>
+    </inertial>
+  </link>
+
+  <joint name="right_hip_twist" type="revolute">
+    <dynamics damping="0.2" friction="1"/>
+    <limit effort="3" lower="-2.618" upper="2.618" velocity="5.6"/>
+    <parent link="hip_chassis"/>
+    <child link="leg_bracket_right"/>
+    <origin xyz="0.032 -0.0101551 -0.0186144" rpy="0 3.14159265359 0" />
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="leg_bracket_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/leg_bracket_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/leg_bracket_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00053091 -0.00172089 0.00834553" rpy="0 0 0"/>
+      <mass value="0.017"/>
+        <inertia ixx="1.495980413e-2" ixy="-2.368780952e-4" ixz="8.186163715e-5" iyy="2.822001687e-3" iyz="3.235943509e-4" izz="1.496789755e-2"/>
+    </inertial>
+  </link>
+
+  <joint name="right_hip_lateral" type="revolute">
+    <dynamics damping="0.2" friction="1"/>
+    <limit effort="3" lower="-2.618" upper="2.618" velocity="5.6"/>
+    <origin xyz="0.0000488 -0.017192 0.02701342" rpy="0 -3.14159265359 3.14159265359"/>
+    <parent link="leg_bracket_right"/>
+    <child link="servo_upper_back_right"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <link name="servo_upper_back_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/servo_upper_back_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/servo_upper_back_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00004575 -0.00107173 -0.01278793" rpy="0 0 0"/>
+      <mass value="0.055"/>
+        <inertia ixx="1.584252149e-2" ixy="-2.504866567e-6" ixz="1.277738286e-6" iyy="1.337412502e-2" iyz="-1.169334286e-4" izz="8.733199211e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="servos_upper_leg_right_fixed_1" type="fixed">
+    <parent link="servo_upper_back_right"/>
+    <child link="servo_upper_front_right"/>
+    <origin xyz="-0.00870754 -0.0341821 -0.0104941"/>
+  </joint>
+
+  <link name="servo_upper_front_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/servo_upper_front_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/servo_upper_front_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00765171 0.00005296 -0.00227755" rpy="0 0 0"/>
+      <mass value="0.055"/>
+        <inertia ixx="1.341498569e-2" ixy="1.31666741e-6" ixz="1.361871011e-4" iyy="1.585479641e-2" iyz="1.087653078e-6" izz="8.730436032e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="servos_upper_leg_right_fixed_2" type="fixed">
+    <parent link="servo_upper_back_right"/>
+    <child link="groin1_right"/>
+    <origin xyz="0.0157543 -0.00646487 -0.0166946"/>
+  </joint>
+
+  <link name="groin1_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/groin1_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/groin1_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00003782 0.00407424 0.00041568" rpy="0 0 0"/>
+      <mass value="0.005"/>
+        <inertia ixx="9.644712035e-4" ixy="3.252272928e-5" ixz="3.002372493e-6" iyy="3.775491692e-4" iyz="-8.879752981e-5" izz="6.129816237e-4"/>
+    </inertial>
+  </link>
+
+  <joint name="servos_upper_leg_right_fixed_3" type="fixed">
+    <parent link="servo_upper_back_right"/>
+    <child link="groin2_right"/>
+    <origin xyz="-0.0158544 -0.00605289 -0.0167685"/>
+  </joint>
+
+  <link name="groin2_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/groin2_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/groin2_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00003481 0.00366226 0.00048959" rpy="0 0 0"/>
+      <mass value="0.005"/>
+        <inertia ixx="9.644710942e-4" ixy="-3.252271271e-5" ixz="-3.002370963e-6" iyy="3.775489768e-4" iyz="-8.879748456e-5" izz="6.129815661e-4"/>
+    </inertial>
+  </link>
+
+  <joint name="servos_upper_leg_right_fixed_4" type="fixed">
+    <parent link="servo_upper_back_right"/>
+    <child link="tob_right"/>
+    <origin xyz="0.00013905 -0.0489806 -0.0161953"/>
+  </joint>
+
+  <link name="tob_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/tob_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/tob_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00018759 -0.00176090 0.00124031" rpy="0 0 0"/>
+      <mass value="0.005"/>
+        <inertia ixx="9.981850555e-4" ixy="-9.830437246e-10" ixz="9.830437246e-10" iyy="1.627183494e-3" iyz="5.15200928e-6" izz="6.697790241e-4"/>
+    </inertial>
+  </link>
+
+  <joint name="right_hip_swing" type="revolute">
+    <dynamics damping="0.2" friction="1"/>
+    <limit effort="3" lower="-2.618" upper="2.618" velocity="5.6"/>
+    <origin xyz="0 -0.0342807 -0.00009354" rpy="0 0 -3.14159265359" />
+    <parent link="servo_upper_back_right"/>
+    <child link="upper_leg_right"/>
+  </joint>
+
+  <link name="upper_leg_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/upper_leg_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/upper_leg_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00142973 0.00379246 -0.04215870" rpy="0 0 0"/>
+      <mass value="0.023"/>
+        <inertia ixx="1.628737188e-2" ixy="3.993939796e-5" ixz="-4.831034036e-5" iyy="2.478624097e-2" iyz="1.25620531e-3" izz="1.217019363e-2"/>
+    </inertial>
+  </link>
+
+  <joint name="right_upper_knee" type="revolute">
+    <dynamics damping="0.2" friction="1"/>
+    <origin xyz="0 0 -0.07456994" rpy="0 0 0" />
+    <limit effort="3" lower="-2.618" upper="2.618" velocity="5.6"/>
+    <parent link="upper_leg_right"/>
+    <child link="servo_upper_knee_right"/>
+  </joint>
+
+  <link name="servo_upper_knee_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/servo_upper_knee_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/servo_upper_knee_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00110869 -0.01295022 -0.00032022" rpy="0 0 0"/>
+      <mass value="0.055"/>
+        <inertia ixx="1.337394956e-2" ixy="-1.171254422e-4" ixz="-2.557390078e-6" iyy="8.733528522e-3" iyz="1.274422863e-6" izz="1.584281516e-2"/>
+    </inertial>
+  </link>
+
+  <joint name="servos_knee_right_fixed_1" type="fixed">
+    <parent link="servo_upper_knee_right"/>
+    <child link="servo_lower_knee_right"/>
+    <origin xyz="0.00827343 -0.0117965 -0.0323855"/>
+  </joint>
+
+  <link name="servo_lower_knee_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/servo_lower_knee_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/servo_lower_knee_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00696888 -0.00116501 0.00006529" rpy="0 0 0"/>
+      <mass value="0.055"/>
+        <inertia ixx="1.336651034e-2" ixy="-1.13982721e-4" ixz="-2.513971737e-6" iyy="8.729622707e-3" iyz="1.290261732e-6" izz="1.583352721e-2"/>
+    </inertial>
+  </link>
+
+  <joint name="servos_knee_right_fixed_2" type="fixed">
+    <parent link="servo_upper_knee_right"/>
+    <child link="knee_damper1_right"/>
+    <origin xyz="-0.0174309 -0.0261935 -0.0135774"/>
+  </joint>
+
+  <link name="knee_damper1_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/knee_damper1_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/knee_damper1_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00004439 -0.00161589 0.00071641" rpy="0 0 0"/>
+      <mass value="0.002"/>
+        <inertia ixx="4.230267299e-4" ixy="7.535580568e-6" ixz="-2.017356657e-6" iyy="1.369879801e-4" iyz="6.73852952e-5" izz="2.904947255e-4"/>
+    </inertial>
+  </link>
+
+  <joint name="servos_knee_right_fixed_3" type="fixed">
+    <parent link="servo_upper_knee_right"/>
+    <child link="knee_damper2_right"/>
+    <origin xyz="0.0175285 -0.0261935 -0.0135774"/>
+  </joint>
+
+  <link name="knee_damper2_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/knee_damper2_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/knee_damper2_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00004436 -0.00161589 0.00071641" rpy="0 0 0"/>
+      <mass value="0.002"/>
+        <inertia ixx="4.230266275e-4" ixy="-7.535584932e-6" ixz="2.017357825e-6" iyy="1.369879436e-4" iyz="6.738533422e-5" izz="2.904946621e-4"/>
+    </inertial>
+  </link>
+
+  <joint name="right_lower_knee" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 -0.0323448"/>
+    <parent link="servo_upper_knee_right"/>
+    <child link="lower_leg_right"/>
+  </joint>
+
+  <link name="lower_leg_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/lower_leg_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/lower_leg_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00171667 0.01351945 -0.02736454" rpy="0 0 0"/>
+      <mass value="0.044"/>
+        <inertia ixx="4.0481699e-2" ixy="7.703372097e-4" ixz="9.074179128e-4" iyy="4.938368018e-2" iyz="-3.273833556e-3" izz="2.491062885e-2"/>
+    </inertial>
+  </link>
+
+  <joint name="right_ankle_swing" type="revolute">
+    <dynamics damping="0.2" friction="1"/>
+    <limit effort="3" lower="-2.618" upper="2.618" velocity="5.6"/>
+    <origin xyz="0 0 -0.0749237" rpy="0 0 0" />
+    <parent link="lower_leg_right"/>
+    <child link="servo_front_foot_right"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+
+  <link name="servo_front_foot_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/servo_front_foot_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/servo_front_foot_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00110911 -0.00014571 0.01274626" rpy="0 0 0"/>
+      <mass value="0.055"/>
+        <inertia ixx="1.337408923e-2" ixy="2.489191051e-6" ixz="1.171556382e-4" iyy="1.584272934e-2" iyz="-1.180709443e-6" izz="8.733371233e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="servos_foot_right_fixed_1" type="fixed">
+    <parent link="servo_front_foot_right"/>
+    <child link="servo_back_foot_right"/>
+    <origin xyz="0.00011615 -0.0336389 0.0101398"/>
+  </joint>
+
+  <link name="servo_back_foot_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/servo_back_foot_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/servo_back_foot_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00006988 -0.00739793 0.00260606" rpy="0 0 0"/>
+      <mass value="0.055"/>
+        <inertia ixx="1.583501504e-2" ixy="2.315906424e-6" ixz="-1.381288722e-6" iyy="1.337453614e-2" iyz="1.252775501e-4" izz="8.725143537e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="servos_foot_right_fixed_2" type="fixed">
+    <parent link="servo_front_foot_right"/>
+    <child link="front_ankle_right"/>
+    <origin xyz="-0.00013859 0.0136403 0.0161539"/>
+  </joint>
+
+  <link name="front_ankle_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/front_ankle_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/front_ankle_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00018758 0.00176084 -0.00124033" rpy="0 0 0"/>
+      <mass value="0.007"/>
+        <inertia ixx="9.981850874e-4" ixy="9.830454502e-10" ixz="9.830454502e-10" iyy="1.627184015e-3" iyz="5.152018324e-6" izz="6.697793396e-4"/>
+    </inertial>
+  </link>
+
+  <joint name="servos_foot_right_fixed_3" type="fixed">
+    <parent link="servo_front_foot_right"/>
+    <child link="back_ankle_right"/>
+    <origin xyz="-0.00013159 -0.0180916 0.0219803"/>
+  </joint>
+
+  <link name="back_ankle_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/back_ankle_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/back_ankle_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0.00018072 -0.00304108 0.00143365" rpy="0 0 0"/>
+      <mass value="0.005"/>
+        <inertia ixx="4.098129619e-4" ixy="-5.54852896e-9" ixz="1.38713224e-9" iyy="1.291342991e-3" iyz="1.390447486e-5" izz="1.050780276e-3"/>
+    </inertial>
+  </link>
+
+  <joint name="right_ankle_lateral" type="revolute">
+    <dynamics damping="0.2" friction="1"/>
+    <limit effort="3" lower="-2.618" upper="2.618" velocity="5.6"/>
+    <parent link="servo_front_foot_right"/>
+    <child link="foot_right"/>
+    <origin xyz="0 0 0" rpy="0 0 3.14159265359" />
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <link name="foot_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/foot_right.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://raider_description/meshes/leg_right/foot_right.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="-0.00226692 -0.00129538 -0.02182894" rpy="0 0 0"/>
+      <mass value="0.031"/>
+        <inertia ixx="2.227441086e-2" ixy="-3.824757376e-5" ixz="-2.905960978e-4" iyy="8.36308527e-3" iyz="-1.906618833e-4" izz="2.670931294e-2"/>
+    </inertial>
+  </link>
+
+<!--gazebo>
+ <plugin filename="libgazebo_ros_dynamixel_motor.so" name="dynamixel_motor">
+  <joint>middle_hip_twist</joint>
+  <base_topic_name>/raider/middle_hip_twist</base_topic_name>
+  <default_pos>0</default_pos>
+  <default_torque_limit>3</default_torque_limit>
+ </plugin>
+</gazebo>
+
+<gazebo>
+ <plugin filename="libgazebo_ros_dynamixel_motor.so" name="dynamixel_motor">
+  <joint>neck</joint>
+  <base_topic_name>/raider/neck</base_topic_name>
+  <default_pos>0</default_pos>
+  <default_torque_limit>3</default_torque_limit>
+ </plugin>
+</gazebo>
+
+<gazebo>
+ <plugin filename="libgazebo_ros_dynamixel_motor.so" name="dynamixel_motor">
+  <joint>right_shoulder_swing</joint>
+  <base_topic_name>/raider/right_shoulder_swing</base_topic_name>
+  <default_pos>0</default_pos>
+  <default_torque_limit>3</default_torque_limit>
+ </plugin>
+</gazebo>
+
+<gazebo>
+ <plugin filename="libgazebo_ros_dynamixel_motor.so" name="dynamixel_motor">
+  <joint>left_shoulder_swing</joint>
+  <base_topic_name>/raider/left_shoulder_swing</base_topic_name>
+  <default_pos>0</default_pos>
+  <default_torque_limit>3</default_torque_limit>
+ </plugin>
+</gazebo>
+
+
+<gazebo>
+ <plugin filename="libgazebo_ros_dynamixel_motor.so" name="dynamixel_motor">
+  <joint>right_shoulder_lateral</joint>
+  <base_topic_name>/raider/right_shoulder_lateral</base_topic_name>
+  <default_pos>1</default_pos>
+  <default_torque_limit>3</default_torque_limit>
+ </plugin>
+</gazebo>
+
+<gazebo>
+ <plugin filename="libgazebo_ros_dynamixel_motor.so" name="dynamixel_motor">
+  <joint>left_shoulder_lateral</joint>
+  <base_topic_name>/raider/left_shoulder_lateral</base_topic_name>
+  <default_pos>1</default_pos>
+  <default_torque_limit>3</default_torque_limit>
+ </plugin>
+</gazebo>
+
+<gazebo>
+ <plugin filename="libgazebo_ros_dynamixel_motor.so" name="dynamixel_motor">
+  <joint>right_elbow</joint>
+  <base_topic_name>/raider/right_elbow</base_topic_name>
+  <default_pos>0</default_pos>
+  <default_torque_limit>3</default_torque_limit>
+ </plugin>
+</gazebo>
+
+<gazebo>
+ <plugin filename="libgazebo_ros_dynamixel_motor.so" name="dynamixel_motor">
+  <joint>left_elbow</joint>
+  <base_topic_name>/raider/left_elbow</base_topic_name>
+  <default_pos>0</default_pos>
+  <default_torque_limit>3</default_torque_limit>
+ </plugin>
+</gazebo>
+
+<gazebo>
+ <plugin filename="libgazebo_ros_dynamixel_motor.so" name="dynamixel_motor">
+  <joint>right_hip_twist</joint>
+  <base_topic_name>/raider/right_hip_twist</base_topic_name>
+  <default_pos>0</default_pos>
+  <default_torque_limit>3</default_torque_limit>
+ </plugin>
+</gazebo>
+
+<gazebo>
+ <plugin filename="libgazebo_ros_dynamixel_motor.so" name="dynamixel_motor">
+  <joint>left_hip_twist</joint>
+  <base_topic_name>/raider/left_hip_twist</base_topic_name>
+  <default_pos>0</default_pos>
+  <default_torque_limit>3</default_torque_limit>
+ </plugin>
+</gazebo>
+
+<gazebo>
+ <plugin filename="libgazebo_ros_dynamixel_motor.so" name="dynamixel_motor">
+  <joint>right_hip_lateral</joint>
+  <base_topic_name>/raider/right_hip_lateral</base_topic_name>
+  <default_pos>0</default_pos>
+  <default_torque_limit>3</default_torque_limit>
+ </plugin>
+</gazebo>
+
+<gazebo>
+ <plugin filename="libgazebo_ros_dynamixel_motor.so" name="dynamixel_motor">
+  <joint>left_hip_lateral</joint>
+  <base_topic_name>/raider/left_hip_lateral</base_topic_name>
+  <default_pos>0</default_pos>
+  <default_torque_limit>3</default_torque_limit>
+ </plugin>
+</gazebo>
+
+<gazebo>
+ <plugin filename="libgazebo_ros_dynamixel_motor.so" name="dynamixel_motor">
+  <joint>right_hip_swing</joint>
+  <base_topic_name>/raider/right_hip_swing</base_topic_name>
+  <default_pos>0</default_pos>
+  <default_torque_limit>3</default_torque_limit>
+ </plugin>
+</gazebo>
+
+<gazebo>
+ <plugin filename="libgazebo_ros_dynamixel_motor.so" name="dynamixel_motor">
+  <joint>left_hip_swing</joint>
+  <base_topic_name>/raider/left_hip_swing</base_topic_name>
+  <default_pos>0</default_pos>
+  <default_torque_limit>3</default_torque_limit>
+ </plugin>
+</gazebo>
+
+<gazebo>
+ <plugin filename="libgazebo_ros_dynamixel_motor.so" name="dynamixel_motor">
+  <joint>right_upper_knee</joint>
+  <base_topic_name>/raider/right_upper_knee</base_topic_name>
+  <default_pos>0</default_pos>
+  <default_torque_limit>3</default_torque_limit>
+ </plugin>
+</gazebo>
+
+<gazebo>
+ <plugin filename="libgazebo_ros_dynamixel_motor.so" name="dynamixel_motor">
+  <joint>left_upper_knee</joint>
+  <base_topic_name>/raider/left_upper_knee</base_topic_name>
+  <default_pos>0</default_pos>
+  <default_torque_limit>3</default_torque_limit>
+ </plugin>
+</gazebo>
+
+<gazebo>
+ <plugin filename="libgazebo_ros_dynamixel_motor.so" name="dynamixel_motor">
+  <joint>right_ankle_swing</joint>
+  <base_topic_name>/raider/right_ankle_swing</base_topic_name>
+  <default_pos>0</default_pos>
+  <default_torque_limit>3</default_torque_limit>
+ </plugin>
+</gazebo>
+
+<gazebo>
+ <plugin filename="libgazebo_ros_dynamixel_motor.so" name="dynamixel_motor">
+  <joint>left_ankle_swing</joint>
+  <base_topic_name>/raider/left_ankle_swing</base_topic_name>
+  <default_pos>0</default_pos>
+  <default_torque_limit>3</default_torque_limit>
+ </plugin>
+</gazebo>
+
+<gazebo>
+ <plugin filename="libgazebo_ros_dynamixel_motor.so" name="dynamixel_motor">
+  <joint>right_ankle_lateral</joint>
+  <base_topic_name>/raider/right_ankle_lateral</base_topic_name>
+  <default_pos>0</default_pos>
+  <default_torque_limit>3</default_torque_limit>
+ </plugin>
+</gazebo>
+
+<gazebo>
+ <plugin filename="libgazebo_ros_dynamixel_motor.so" name="dynamixel_motor">
+  <joint>left_ankle_lateral</joint>
+  <base_topic_name>/raider/left_ankle_lateral</base_topic_name>
+  <default_pos>0</default_pos>
+  <default_torque_limit>3</default_torque_limit>
+ </plugin>
+</gazebo-->
+
+
+<gazebo reference = "base_link">
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+</gazebo>
+
+<gazebo reference = "chest_chassis">
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+</gazebo>
+
+<gazebo reference = "shoulder_left">
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+</gazebo>
+
+<gazebo reference = "servo_upper_arm_left">
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+</gazebo>
+
+<gazebo reference = "elbow_left">
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+</gazebo>
+
+<gazebo reference = "shoulder_right">
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+</gazebo>
+
+<gazebo reference = "servo_upper_arm_right">
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+</gazebo>
+
+<gazebo reference = "elbow_right">
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+</gazebo>
+
+<gazebo reference = "leg_bracket_left">
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+</gazebo>
+
+<gazebo reference = "servo_upper_back_left">
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+</gazebo>
+
+<gazebo reference = "upper_leg_left">
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+</gazebo>
+
+<gazebo reference = "servo_upper_knee_left">
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+</gazebo>
+
+<gazebo reference = "lower_leg_left">
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+</gazebo>
+
+<gazebo reference = "servo_foot_front_left">
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+</gazebo>
+
+<gazebo reference = "leg_bracket_right">
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+</gazebo>
+
+<gazebo reference = "servo_upper_back_right">
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+</gazebo>
+
+<gazebo reference = "upper_leg_right">
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+</gazebo>
+
+<gazebo reference = "servo_upper_knee_right">
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+</gazebo>
+
+<gazebo reference = "lower_leg_right">
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+</gazebo>
+
+<gazebo reference = "servo_foot_front_right">
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+  <mu1>1.0</mu1>
+  <mu2>1.0</mu2>
+  <minDepth>0.001</minDepth>
+</gazebo>
+
+<gazebo reference = "foot_right">
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
+</gazebo>
+
+<gazebo reference = "foot_left">
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>
+</gazebo>
+
+<!--gazebo reference="middle_hip_twist">
+   <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+
+<gazebo reference="neck">
+   <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+
+<gazebo reference="left_shoulder_swing">
+   <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+
+<gazebo reference="left_shoulder_lateral">
+   <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+
+<gazebo reference="left_elbow">
+   <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+
+<gazebo reference="right_shoulder_swing">
+   <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+
+<gazebo reference="right_shoulder_lateral">
+   <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+
+<gazebo reference="right_elbow">
+   <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+
+<gazebo reference="left_hip_twist">
+   <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+
+<gazebo reference="left_hip_lateral">
+   <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+
+<gazebo reference="left_hip_swing">
+   <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+
+<gazebo reference="left_upper_knee">
+   <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+
+<gazebo reference="left_ankle_swing">
+   <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+
+<gazebo reference="left_ankle_lateral">
+   <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+
+<gazebo reference="right_hip_twist">
+   <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+
+<gazebo reference="right_hip_lateral">
+   <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+
+<gazebo reference="right_hip_swing">
+   <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+
+<gazebo reference="right_upper_knee">
+   <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+
+<gazebo reference="right_ankle_swing">
+   <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+
+<gazebo reference="right_ankle_lateral">
+   <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo-->
+
+
+
+  <!-- Import gazebo_ros_control plugin -->
+  <gazebo>
+    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNamespace>/raider</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
+  <transmission name="neck_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="middle_hip_twist">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="middle_hip_twist_motor">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="neck_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="neck">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="neck_motor">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="right_shoulder_swing_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_shoulder_swing">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_shoulder_swing_motor">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="left_shoulder_swing_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_shoulder_swing">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_shoulder_swing_motor">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_shoulder_lateral_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_shoulder_lateral">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_shoulder_lateral_motor">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="left_shoulder_lateral_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_shoulder_lateral">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_shoulder_lateral_motor">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_elbow_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_elbow">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_elbow_motor">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="left_elbow_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_elbow">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_elbow_motor">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_hip_twist_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_hip_twist">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_hip_twist_motor">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="left_hip_twist_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_hip_twist">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_hip_twist_motor">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_hip_lateral_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_hip_lateral">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_hip_lateral_motor">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="left_hip_lateral_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_hip_lateral">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_hip_lateral_motor">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_hip_swing_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_hip_swing">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_hip_swing_motor">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="left_hip_swing_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_hip_swing">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_hip_swing_motor">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_upper_knee_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_upper_knee">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_upper_knee_motor">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="left_upper_knee_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_upper_knee">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_upper_knee_motor">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_ankle_swing_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_ankle_swing">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_ankle_swing_motor">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="left_ankle_swing_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_ankle_swing">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_ankle_swing_motor">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_ankle_lateral_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_ankle_lateral">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_ankle_lateral_motor">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="left_ankle_lateral_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_ankle_lateral">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_ankle_lateral_motor">
+      <hardwareInterface>PosVelJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+</robot>

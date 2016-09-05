@@ -1,0 +1,304 @@
+<?xml version="1.0" ?>
+<robot name="test">
+
+
+  <link name="servo_hip_middle">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://test_description/meshes/servo_hip_middle.dae" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://test_description/meshes/servo_hip_middle.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.055"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+  </link>
+
+  <link name="upper_hip">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://test_description/meshes/upper_hip.dae" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://test_description/meshes/upper_hip.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="5e-3"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+  </link>
+
+    <link name="chest_chassis">
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://test_description/meshes/chest.dae" scale="1 1 1"/>
+        </geometry>
+      </collision>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://test_description/meshes/chest.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.005"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+    </link>
+
+    <link name="head">
+      <collision>
+        <origin xyz="0.00082934 -0.00355504 0.0193983" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://test_description/meshes/head.dae" scale="1 1 1"/>
+        </geometry>
+      </collision>
+      <visual>
+        <origin xyz="0 0 0.0193983" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://test_description/meshes/head.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.005"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+    </link>
+
+    <link name="servo_shoulder_left">
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://test_description/meshes/servo_shoulder_left.dae" scale="1 1 1"/>
+        </geometry>
+      </collision>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://test_description/meshes/servo_shoulder_left.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.005"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+    </link>
+
+    <link name="shoulder_left">
+      <collision>
+        <origin xyz="0.00689501 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://test_description/meshes/shoulder_left.dae" scale="1 1 1"/>
+        </geometry>
+      </collision>
+      <visual>
+        <origin xyz="0.00689501 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://test_description/meshes/shoulder_left.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.005"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+    </link>
+
+   <link name="servo_upper_arm_left">
+      <collision>
+        <origin xyz="-0.00138559 0.0087251 -0.0111908" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://test_description/meshes/servo_upper_arm_left.dae" scale="1 1 1"/>
+        </geometry>
+      </collision>
+      <visual>
+        <origin xyz="-0.00138559 0.0087251 -0.0111908" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://test_description/meshes/servo_upper_arm_left.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.005"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+    </link>   
+
+    <link name="union1_servo_left">
+      <collision>
+        <origin xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://test_description/meshes/union1_servo_left.dae" scale="1 1 1"/>
+        </geometry>
+      </collision>
+      <visual>
+        <origin xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://test_description/meshes/union1_servo_left.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.005"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+    </link>
+
+    <link name="union2_servo_left">
+      <collision>
+        <origin xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://test_description/meshes/union2_servo_left.dae" scale="1 1 1"/>
+        </geometry>
+      </collision>
+      <visual>
+        <origin xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://test_description/meshes/union2_servo_left.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.005"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+    </link>
+
+    <link name="servo_elbow_left">
+      <collision>
+        <origin xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://test_description/meshes/servo_elbow_left.dae" scale="1 1 1"/>
+        </geometry>
+      </collision>
+      <visual>
+        <origin xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://test_description/meshes/servo_elbow_left.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.005"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+    </link>
+
+    <link name="elbow_left">
+      <collision>
+        <origin xyz="0 0 -0.0114312"/>
+        <geometry>
+          <mesh filename="package://test_description/meshes/elbow_left.dae" scale="1 1 1"/>
+        </geometry>
+      </collision>
+      <visual>
+        <origin xyz="0 0 -0.0114312"/>
+        <geometry>
+          <mesh filename="package://test_description/meshes/elbow_left.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.005"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+    </link>
+
+  <joint name="servo_upperhip_middle" type="fixed">
+    <parent link="servo_hip_middle"/>
+    <child link="upper_hip"/>
+    <origin xyz="-0.00004428281 0.00085275 0.0095104"/>
+  </joint>
+
+  <joint name="upperhip_chest" type="revolute">
+    <dynamics damping="0.0" friction="0.0"/>
+    <limit effort="100" lower="-3.14159265359" upper="3.14159265359" velocity="3"/>
+    <parent link="upper_hip"/>
+    <child link="chest_chassis"/>
+    <origin xyz="0.00057195054 0.00924597 0.0279895"/>
+    <!--origin xyz="0 0 76.94e-3"/-->
+    <axis xyz="0 0 1"/>
+  </joint>
+
+    <joint name="chest_head" type="fixed">
+      <dynamics damping="0.0" friction="0.0"/>
+      <parent link="chest_chassis"/>
+      <child link="head"/>
+      <origin xyz="0 0 0.0368427"/>
+      <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint name="servoshoulderleft_chest" type="fixed">
+      <dynamics damping="0.0" friction="0"/>
+      <parent link="chest_chassis"/>
+      <child link="servo_shoulder_left"/>
+      <origin xyz="-0.04023593 -0.00014188 0.0063335"/>
+    </joint>
+
+  <joint name="servo_shoulder_left" type="revolute">
+    <dynamics damping="0.0" friction="0.0"/>
+    <limit effort="100" lower="-3.14159265359" upper="3.14159265359" velocity="3"/>
+    <parent link="servo_shoulder_left"/>
+    <child link="shoulder_left"/>
+    <origin xyz="-0.03549721 0.00008352 0.0102229"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+
+    <joint name="joint_servo_upper_arm_left" type="revolute">
+      <dynamics damping="0.0" friction="0.0"/>
+      <limit upper="1.5" lower="-1.5" velocity="3" effort="100"/>
+      <parent link="shoulder_left"/>
+      <child link="servo_upper_arm_left"/>
+      <origin xyz="0 0 0" rpy="0 0.5010695 0"/>
+      <axis xyz="0 1 0"/>
+    </joint>
+
+    <joint name="joint_servo_upperarm_union1_left" type="fixed">
+      <dynamics damping="0.0" friction="10.0"/>
+      <parent link="servo_upper_arm_left"/>
+      <child link="union1_servo_left"/>
+      <origin xyz="-0.00388689 -0.00006156 -0.0386662" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="joint_servo_upperarm_union2_left" type="fixed">
+      <dynamics damping="0.0" friction="10.0"/>
+      <parent link="servo_upper_arm_left"/>
+      <child link="union2_servo_left"/>
+      <origin xyz="-0.00443019 0.00011295 -0.0454638" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="joint_servo_elbowunion_left" type="fixed">
+      <dynamics damping="0.0" friction="10.0"/>
+      <parent link="union2_servo_left"/>
+      <child link="servo_elbow_left"/>
+      <origin xyz="-0.0110408 -0.00010042 -0.0267319"/>
+    </joint>
+
+    <joint name="joint_servo_elbow_left" type="revolute">
+      <dynamics damping="0.0" friction="0.0"/>
+      <limit lower="-2.09439510239" upper="2.09439510239" velocity="3" effort="100"/>
+      <parent link="servo_elbow_left"/>
+      <child link="elbow_left"/>
+      <origin xyz="0.0002969 0.00094858 -0.0080843" rpy="0 0 0"/>
+      <axis xyz="1 0 0"/>
+    </joint>
+
+</robot>

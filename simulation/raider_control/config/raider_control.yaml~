@@ -1,0 +1,226 @@
+raider:
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+
+  # HEAD
+
+  neck_position_controller:
+    type: position_controllers/JointPositionController
+    joint: neck
+
+
+  middle_hip_twist_position_controller:
+    type: position_controllers/JointPositionController
+    joint: middle_hip_twist
+
+
+
+  # ARMS
+
+  l_shoulder_swing_position_controller:
+    type: position_controllers/JointPositionController
+    joint: left_shoulder_swing
+
+
+  l_shoulder_lateral_position_controller:
+    type: position_controllers/JointPositionController
+    joint: left_shoulder_lateral
+
+
+  l_elbow_position_controller:
+    type: position_controllers/JointPositionController
+    joint: left_elbow
+
+
+
+  r_shoulder_swing_position_controller:
+    type: position_controllers/JointPositionController
+    joint: right_shoulder_swing
+
+
+  r_shoulder_lateral_position_controller:
+    type: position_controllers/JointPositionController
+    joint: right_shoulder_lateral
+
+
+  r_elbow_position_controller:
+    type: position_controllers/JointPositionController
+    joint: right_elbow
+
+
+
+
+  # LEGS
+
+  l_hip_twist_position_controller:
+    type: position_controllers/JointPositionController
+    joint: left_hip_twist
+
+
+  l_hip_lateral_position_controller:
+    type: position_controllers/JointPositionController
+    joint: left_hip_lateral
+
+
+  l_hip_swing_position_controller:
+    type: position_controllers/JointPositionController
+    joint: left_hip_swing
+
+
+  l_upper_knee_position_controller:
+    type: position_controllers/JointPositionController
+    joint: left_upper_knee
+
+
+  l_ankle_swing_position_controller:
+    type: position_controllers/JointPositionController
+    joint: left_ankle_swing
+
+
+  l_ankle_lateral_position_controller:
+    type: position_controllers/JointPositionController
+    joint: left_ankle_lateral
+
+
+
+  r_hip_twist_position_controller:
+    type: position_controllers/JointPositionController
+    joint: right_hip_twist
+
+
+  r_hip_lateral_position_controller:
+    type: position_controllers/JointPositionController
+    joint: right_hip_lateral
+
+
+  r_hip_swing_position_controller:
+    type: position_controllers/JointPositionController
+    joint: right_hip_swing
+
+
+  r_upper_knee_position_controller:
+    type: position_controllers/JointPositionController
+    joint: right_upper_knee
+
+
+  r_ankle_swing_position_controller:
+    type: position_controllers/JointPositionController
+    joint: right_ankle_swing
+
+
+  r_ankle_lateral_position_controller:
+    type: position_controllers/JointPositionController
+    joint: right_ankle_lateral
+
+
+  # HEAD
+
+  neck_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: neck
+
+
+  middle_hip_twist_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: middle_hip_twist
+
+
+
+  # ARMS
+
+  l_shoulder_swing_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: left_shoulder_swing
+
+
+  l_shoulder_lateral_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: left_shoulder_lateral
+
+
+  l_elbow_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: left_elbow
+
+
+
+  r_shoulder_swing_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: right_shoulder_swing
+
+
+  r_shoulder_lateral_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: right_shoulder_lateral
+
+
+  r_elbow_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: right_elbow
+
+
+
+
+  # LEGS
+
+  l_hip_twist_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: left_hip_twist
+
+
+  l_hip_lateral_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: left_hip_lateral
+
+
+  l_hip_swing_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: left_hip_swing
+
+
+  l_upper_knee_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: left_upper_knee
+
+
+  l_ankle_swing_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: left_ankle_swing
+
+
+  l_ankle_lateral_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: left_ankle_lateral
+
+
+
+  r_hip_twist_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: right_hip_twist
+
+
+  r_hip_lateral_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: right_hip_lateral
+
+
+  r_hip_swing_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: right_hip_swing
+
+
+  r_upper_knee_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: right_upper_knee
+
+
+  r_ankle_swing_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: right_ankle_swing
+
+
+  r_ankle_lateral_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: right_ankle_lateral
+

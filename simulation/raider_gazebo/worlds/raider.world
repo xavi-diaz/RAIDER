@@ -1,0 +1,197 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+
+
+  <world name="obstacle_avoidance_contest">
+
+    <scene>
+      <sky>
+      <clouds>
+        <speed>12</speed>
+      </clouds>
+     </sky>
+     <grid>0</grid>
+     <origin_visual>0</origin_visual>
+    </scene>
+
+    <!-- Point light sources -->
+
+    <light name='point_light_1' type='point'>
+      <pose frame=''>0 3 2 0 0 0</pose>
+      <diffuse>0.498039 0.498039 0.498039 1</diffuse>
+      <specular>0.0980392 0.0980392 0.0980392 1</specular>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <spot>
+        <inner_angle>0.6</inner_angle>
+        <outer_angle>1</outer_angle>
+        <falloff>1</falloff>
+      </spot>
+      <direction>0 0 -1</direction>
+    </light>
+
+    <light name='point_light_2' type='point'>
+      <pose frame=''>0 -3 2 0 0 0</pose>
+      <diffuse>0.494118 0.494118 0.494118 1</diffuse>
+      <specular>0.0941176 0.0941176 0.0941176 1</specular>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <spot>
+        <inner_angle>0.6</inner_angle>
+        <outer_angle>1</outer_angle>
+        <falloff>1</falloff>
+      </spot>
+      <direction>0 0 -1</direction>
+    </light>
+
+    <light name='point_light_3' type='point'>
+      <pose frame=''>3 0 2 0 0 0</pose>
+      <diffuse>0.494118 0.494118 0.494118 1</diffuse>
+      <specular>0.0901961 0.0901961 0.0901961 1</specular>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <spot>
+        <inner_angle>0.6</inner_angle>
+        <outer_angle>1</outer_angle>
+        <falloff>1</falloff>
+      </spot>
+      <direction>0 0 -1</direction>
+    </light>
+
+    <light name='point_light_4' type='point'>
+      <pose frame=''>-3 0 2 0 0 0</pose>
+      <diffuse>0.494118 0.494118 0.494118 1</diffuse>
+      <specular>0.0901961 0.0901961 0.0901961 1</specular>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <spot>
+        <inner_angle>0.6</inner_angle>
+        <outer_angle>1</outer_angle>
+        <falloff>1</falloff>
+      </spot>
+      <direction>0 0 -1</direction>
+    </light>
+
+    <model name="floor">
+      <pose>0 0 0 0 0 0</pose>
+      <static>true</static>
+      <link name="plane">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://floor/floor.dae</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://floor/floor.stl</uri></mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+            </friction>
+            <contact/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+      </link>
+    </model>
+
+    <model name="walls">
+      <pose>0 0 0.25 0 0 0</pose>
+      <static>true</static>
+      <link name="perimeter">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://walls/walls.dae</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://walls/walls.stl</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="obstacle1">
+      <pose>-0.25 -0.5 0.25 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://obstacle1/obstacle1.dae</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://obstacle1/obstacle1.stl</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="obstacle2">
+      <pose>0.25 0.5 0.25 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://obstacle2/obstacle2.dae</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://obstacle2/obstacle2.stl</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+  <model name="top_camera">
+    <pose>0 0 2.2 0 1.570796327 0</pose>
+    <static>true</static>
+    <link name="link">
+        <sensor type="camera" name="top_camera">
+          <camera>
+            <horizontal_fov>1.047</horizontal_fov>
+            <image>
+              <width>256</width>
+              <height>320</height>
+            </image>
+            <clip>
+              <near>0.1</near>
+              <far>100</far>
+            </clip>
+          </camera>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <visualize>false</visualize>
+        </sensor>
+    </link>
+  </model>
+
+  </world>
+</sdf>

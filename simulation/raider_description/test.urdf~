@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<robot name="test">
+
+    <link name="chest_chassis">
+      <collision>
+        <origin xyz="31.26e-3 0 -76.94e-3" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://raider_description/meshes/chest/chest.dae" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+      <visual>
+        <origin xyz="31.26e-3 0 -76.94e-3" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://raider_description/meshes/chest/chest.dae" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.005"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+    </link>
+
+    <link name="head">
+      <collision>
+        <origin xyz="0 -12.1e-3 -139.94e-3" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://raider_description/meshes/head/head.dae" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+      <visual>
+        <origin xyz="0 -12.1e-3 -139.94e-3" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://raider_description/meshes/head/head.dae" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </visual>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.005"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+    </link>
+
+
+    <joint name="chest_head" type="revolute">
+      <dynamics damping="0.0" friction="0.0"/>
+      <limit upper="0" lower="-1" velocity="3" effort="100"/>
+      <parent link="chest_chassis"/>
+      <child link="head"/>
+      <origin xyz="31.26e-3 12.1e-3 63e-3"/>
+      <axis xyz="1 0 0"/>
+    </joint>
+
+
+</robot>
