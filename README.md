@@ -1,1 +1,1 @@
-For more information, read the abstract of the pdf found inside the doc folder.
+For more information, read the abstract of the pdf found inside the doc folder (coming soon...)
